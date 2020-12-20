@@ -43,7 +43,7 @@ class turtlebot():
 		vel_msg.angular.z =0
 		self.velocity_publisher.publish(vel_msg)
 
-		rospy.spin()
+		
 
 	def keep_oriented(self):
 		tolerance = input("Set your orientation tolerance:")
@@ -58,14 +58,14 @@ class turtlebot():
 		vel_msg.angular.y = 0
 		vel_msg.angular.z = 0
 
-		while True::
+		while True:
 			if (self.mgf_v.y > (0.01 * tolerance)) :
 
 				vel_msg.angular.z = 4
 
 				self.velocity_publisher.publish(vel_msg)
 
-				rospy.spin()
+				
 
 			elif (self.mgf_v.y < (-0.01 * tolerance)):
 
@@ -73,13 +73,13 @@ class turtlebot():
 
 				self.velocity_publisher.publish(vel_msg)
 
-				rospy.spin()
+				
 			else :
 				vel_msg.angular.z = 0
 
 				self.velocity_publisher.publish(vel_msg)
 
-				rospy.spin()
+			rospy.spin()
 
 
 
