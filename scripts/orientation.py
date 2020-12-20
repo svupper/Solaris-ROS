@@ -59,7 +59,7 @@ class turtlebot():
 		vel_msg.angular.z = 0
 
 		while True::
-			if self.mgf_v.y > (0.01 * tolerance) :
+			if (self.mgf_v.y > (0.01 * tolerance)) :
 
 				vel_msg.angular.z = 4
 
@@ -67,7 +67,7 @@ class turtlebot():
 
 				rospy.spin()
 
-			else if self.mgf_v.y < -(0.01 * tolerance):
+			elif (self.mgf_v.y < (-0.01 * tolerance)):
 
 				vel_msg.angular.z = -4
 
@@ -90,4 +90,5 @@ if __name__ == '__main__':
         x.oriente_equator()	#This function make sure the orientation is good even in south equator
 	x.keep_oriented()	#Processing function
 
-    except rospy.ROSInterruptException: pass
+    except rospy.ROSInterruptException: 
+	pass
